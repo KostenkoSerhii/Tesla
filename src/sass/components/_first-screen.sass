@@ -1,0 +1,83 @@
+.first-screen
+	padding-top: 48px
+	+image("fs-bg-day.jpg")
+	height: 100vh
+	+r(1200)
+		min-height: 800px
+		height: 100%
+	+r(991)
+		min-height: 650px
+	+r(767)
+		min-height: 300px
+	+cover
+.is-night-js
+	.first-screen
+		+image("fs-bg-night.jpg")
+.switch
+	text-align: center
+	+r(767)
+		display: inline-block
+		position: absolute
+		right: 15px
+.switch__month, .switch__sun
+	display: inline-block
+	position: relative
+.is-night-js
+	.switch__month
+		+s(n-month)
+		&:after
+			background: #fff
+	.switch__sun
+		+s(n-sun)
+.switch__month
+	margin-right: 32px
+	+s(d-month)
+	&:after
+		content: ''
+		position: absolute
+		right: -17px
+		top: 50%
+		transform: translateY(-50%)
+		width: 2px
+		height: 54px
+		background: #2e2e2e
+	&:hover
+		+s(month-is-hover)
+.switch__sun
+	+s(d-sun)
+	&:hover
+		+s(sun-is-hover)
+.first-screen__phone
+	color: $black
+	position: absolute
+	right: 87px
+	top: 13px
+	+r(991)
+		right: 0px
+		font-size: 22px
+	+r(767)
+		top: -30px
+		right: 15px
+.is-night-js
+	.first-screen__phone
+		color: $white
+.logo
+	+image("d-logo.png")
+	width: 210px
+	height: 368px
+	position: relative
+	top: -15px
+	+cover
+	display: inline-block
+	+r(991)
+		width: 150px
+		height: 250px
+		background-size: contain
+	+r(767)
+		width: 100px
+		height: 180px
+		top: -40px
+
+.is-night-js
+	.logo
+		+image("n-logo.png")

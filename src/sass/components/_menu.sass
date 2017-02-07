@@ -1,0 +1,37 @@
+.first-screen
+	.nav
+		width: 210px
+		margin-top: 10px
+		+r(991)
+			width: 170px
+			position: relative
+			z-index: 1
+			&:before
+				content: ''
+				+coverdiv
+				background: #fff
+				z-index: -1
+				opacity: 0.2
+		+r(767)
+			display: none
+
+.nav__links
+	display: block
+	text-align: center
+	text-transform: uppercase
+	color: $black
+	font: 300 18px "Din Light", sans-serif
+	padding: 8px 0
+	transition: all .3s
+	+rmin(1200)
+		&:hover
+			background-color: #e3ac2c
+			background-image: linear-gradient(165deg, rgba(241, 238, 146, 0.1) 0%, transparent 100%)
+			padding: 16px 0
+.is-night-js
+	.nav__links
+		color: $white
+		+rmin(1200)
+			&:hover
+				background-color: #c35a3f
+				background-image: linear-gradient(165deg, rgba(205, 199, 42, 0.1) 0%, transparent 100%)

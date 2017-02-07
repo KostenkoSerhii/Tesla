@@ -1,0 +1,17 @@
+.container, .container-large
+	margin: 0 auto
+	position: relative
+	padding: 0 15px
+	+rmin(320)
+		width: 100%
+	+rmin(768)
+		width: 750px
+	+rmin(992)
+		width: 970px
+	+rmin(1200)
+		width: 1030px
+.container-large
+	+rmin(1200)
+		width: 80%
+	+rmin(1500)
+		width: 1460px
