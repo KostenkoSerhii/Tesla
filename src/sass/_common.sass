@@ -6,6 +6,7 @@ a
 	font: 300 30px/1em "Din Light", sans-serif
 	color: $main-text-color
 	text-transform: uppercase
+	text-align: center
 	+r(767)
 		font-size: 18px
 .phone
@@ -13,7 +14,45 @@ a
 	font: 700 36px/0.8em $DB
 	+r(767)
 		font-size: 18px
+.article
+	color: $main-text-color
+	font: $main-text-font
+	+r(767)
+		font: $main-text-font-mobile
+.article__img
+	width: 475px
+	height: 250px
+	display: block
+	+cover
+	margin-left: auto
+	margin-right: auto
+	+r(1200)
+		width: 300px
+		height: 180px
+	+r(767)
+		width: 270px
+		height: 130px
+.article--two-column
+	+clr
+.article__side
+	width: 475px
+	float: left
+	&:nth-of-type(odd)
+		.article__img
+			margin-top: 67px
+			+r(991)
+				margin-top: 15px
+	+r(1200)
+		width: 440px
+	&:nth-of-type(even)
+		float: right
+		.article__img
+			margin-bottom: 67px
+			+r(991)
+				margin-bottom: 15px
+	+r(991)
+		width: 100%
+		float: none
+		margin-bottom: 10px
 
-
-
-
+	

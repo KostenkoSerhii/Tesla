@@ -1,20 +1,23 @@
-.first-screen
-	.nav
-		width: 210px
-		margin-top: 10px
-		+r(991)
-			width: 170px
-			position: relative
-			z-index: 1
-			&:before
-				content: ''
-				+coverdiv
-				background: #fff
-				z-index: -1
-				opacity: 0.2
-		+r(767)
-			display: none
-
+.first-screen__nav
+	width: 210px
+	margin-top: 10px
+	+r(991)
+		width: 170px
+		position: relative
+		z-index: 1
+		&:before
+			content: ''
+			+coverdiv
+			background: #fff
+			z-index: -1
+			opacity: 0.2
+	+r(767)
+		display: none
+		position: fixed
+		right: 15px
+		top: 35px
+		&:before
+			opacity: 0.6
 .nav__links
 	display: block
 	text-align: center
@@ -23,15 +26,64 @@
 	font: 300 18px "Din Light", sans-serif
 	padding: 8px 0
 	transition: all .3s
+.first-screen__nav-links
 	+rmin(1200)
 		&:hover
 			background-color: #e3ac2c
 			background-image: linear-gradient(165deg, rgba(241, 238, 146, 0.1) 0%, transparent 100%)
 			padding: 16px 0
 .is-night-js
-	.nav__links
+	.first-screen__nav-links
 		color: $white
 		+rmin(1200)
 			&:hover
 				background-color: #c35a3f
 				background-image: linear-gradient(165deg, rgba(205, 199, 42, 0.1) 0%, transparent 100%)
+		+r(767)
+			color: $black
+.fixed-line__nav
+	//float: right
+	display: inline-block
+	float: right
+	margin-top: 20px
+	+r(991)
+		float: none
+		display: block
+		margin: 5px 0 0 0
+		text-align: center
+	li
+		display: inline-block
+		margin-right: 14px
+		&:last-of-type
+			margin-right: 30px
+		+r(1199)
+			margin-right: 5px
+			&:last-of-type
+				margin-right: 0
+.fixed-line__nav-links
+	font-size: 16px
+	+rmin(1200)
+		position: relative
+		&:after
+			transition: all .3s
+			content: ''
+			position: absolute
+			height: 1px
+			width: 0%
+			background: $black
+			z-index: 22
+			opacity: 0
+			bottom: 2px
+			left: 50%
+			transform: translateX(-50%)
+		&:hover
+			&:after
+				width: 100%
+				opacity: 0.5
+	+r(991)
+		font-size: 14px
+.is-night-js
+	.fixed-line__nav-links
+		color: $white
+		&:after
+			background: $white
