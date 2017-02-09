@@ -4,12 +4,13 @@ title: Index page
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
+{% import "data/data.html" as tests %}
 {% include "partials/_first-screen.html" %}
 {% include "partials/_about-complex.html" %}
-
-
-
 {% include "partials/_advantages.html" %}
+{% include "partials/_planing.html" %}
+
+{% include "partials/_fixed-elements.html" %}
 <!-- 	{# variable example #}
 <h1>{{title}}</h1>
 
@@ -22,7 +23,7 @@ title: Index page
 
 
 {# data usage example #}
-	{% import "data/data.html" as tests %}
+
 	
 	{% for test in tests.list %}
 	<li>{{test.title}}</li>

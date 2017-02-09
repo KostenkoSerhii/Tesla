@@ -6,10 +6,12 @@
 //=include lib/scrollto.min.js
 //=include lib/jquery-ui.min.js
 
+
 sayHello();
 $(document).ready(function(){
 	/*fixed-line*/
 	var	firstScreenHeight = $(".first-screen-js").height();
+	//alert(firstScreenHeight);
 	var $fixedLine = $(".fixed-line");
 	$(window).scroll(function(){
 		if ( $(this).scrollTop() > firstScreenHeight && $fixedLine.hasClass("in-not-fixed") ){
@@ -30,35 +32,45 @@ $(document).ready(function(){
 		$("body").removeClass("is-night-js").addClass("is-day-js");
 	});
 		// switcher day/night for time
-	var time = new Date().getHours();
-	if (time >= 6 && time < 21){
-		$('body').addClass('is-day-js');
-	} else {
-		$('body').addClass('is-night-js');
-	}
-	/*switch*/
+		var time = new Date().getHours();
+		if (time >= 6 && time < 21){
+			$('body').addClass('is-day-js');
+		} else {
+			$('body').addClass('is-night-js');
+		}
+		/*switch*/
 
-	/*menu*/
-	$(".first-screen .nav").addClass("first-screen__nav");
-	$(".first-screen .nav .nav__links").addClass("first-screen__nav-links");
-	$(".fixed-line .nav").addClass("fixed-line__nav");
-	$(".fixed-line .nav .nav__links").addClass("fixed-line__nav-links");
-	/*menu*/
+		/*menu*/
+		$(".first-screen .nav").addClass("first-screen__nav");
+		$(".first-screen .nav .nav__links").addClass("first-screen__nav-links");
+		$(".fixed-line .nav").addClass("fixed-line__nav");
+		$(".fixed-line .nav .nav__links").addClass("fixed-line__nav-links");
+		/*menu*/
 
-	/*menu-btn*/
-	$(".menu-btn").on("click", function(){
-		$(this).toggleClass("btn-is-active");
-		$(".first-screen__nav").slideToggle();
-	//$(".header__menu").slideToggle();
-});
-	/*menu-btn*/
+		/*menu-btn*/
+		$(".menu-btn").on("click", function(){
+			$(this).toggleClass("btn-is-active");
+			$(".first-screen__nav").slideToggle();
+		});
+		/*menu-btn*/
 
-	/*advantages tabs*/
-	$( "#tabs" ).tabs({
-		event: "mouseover"
-	});
-	/*advantages tabs*/
+		/*window width*/
+		var windowWidth = $(window).width();
 
+		if(windowWidth < 992){
+			/*tabs*/
+			$("#adv-tabs").tabs({
+			});
+			/*tabs*/
+		}else{
+			/*tabs*/
+			$("#adv-tabs").tabs({
+				event: "mouseover"
+			});
+			/*tabs*/
+
+		};
+		/*window width*/
 
 		// 
 	});

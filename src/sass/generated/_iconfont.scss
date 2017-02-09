@@ -9,7 +9,18 @@
   font-style: normal;
 }
 
-$icon-facebook: "\EA01";
+$icon-1: "\EA01";
+$icon-10: "\EA02";
+$icon-11: "\EA03";
+$icon-2: "\EA04";
+$icon-3: "\EA05";
+$icon-4: "\EA06";
+$icon-5: "\EA07";
+$icon-6: "\EA08";
+$icon-7: "\EA09";
+$icon-8: "\EA0A";
+$icon-9: "\EA0B";
+$icon-facebook: "\EA0C";
 
 
 %icon {
@@ -28,4 +39,15 @@ $icon-facebook: "\EA01";
   display: inline-block;
 }
 
+.icon-1:before { content: $icon-1; }
+.icon-10:before { content: $icon-10; }
+.icon-11:before { content: $icon-11; }
+.icon-2:before { content: $icon-2; }
+.icon-3:before { content: $icon-3; }
+.icon-4:before { content: $icon-4; }
+.icon-5:before { content: $icon-5; }
+.icon-6:before { content: $icon-6; }
+.icon-7:before { content: $icon-7; }
+.icon-8:before { content: $icon-8; }
+.icon-9:before { content: $icon-9; }
 .icon-facebook:before { content: $icon-facebook; }

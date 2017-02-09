@@ -1,16 +1,103 @@
 .advantages
-	padding-top: 65px
+	padding-top: 73px
 	position: relative
+	padding-bottom: 62px
 	+cover
 	&:before
 		content: ''
 		+coverdiv
-		background-color: #00805f
-		opacity: .9
-		background-image: linear-gradient(-45deg, rgba(134, 199, 71, 0.26) 0%, transparent 100%)
+		opacity: 0.8
+	+r(767)
+		padding-top: 35px
+		padding-bottom: 30px
+.is-day-js
+	.advantages
+		&:before
+			background-color: #00805f
+			background-image: linear-gradient(-45deg, #439a4f  0%, #38926e 50%,  #0a7e61 100%)
 .is-night-js
 	.advantages
 		&:before
 			background-color: #2e487e
-			background-image: linear-gradient(-45deg, rgba(143, 105, 119, 0.26) 0%, transparent 100%)
+			background-image: linear-gradient(-45deg, #5f5b75  0%, #3A52A1 100%)
+			+gh(#5f5b75, #3A52A1)
 .advantages__h2
+	margin-bottom: 125px
+	+r(991)
+		margin-bottom: 40px
+.adv-tabs__nav
+	text-align: center
+	margin-bottom: 32px
+	+rmin(992)
+		height: 160px
+.adv-tabs__nav-item
+	display: inline-block
+	position: relative
+	vertical-align: top
+	transition: margin-top .1s
+	border-radius: 50%
+	max-height: 160px
+	margin-right: 18px
+	&:last-of-type
+		margin-right: 0
+	+r(1200)
+		margin-right: 10px
+	+r(991)
+		height: 60px
+		margin: 0 5px 10px!important
+	+r(767)
+		margin: 0 3px 10px!important
+.adv-tabs__nav-link
+	display: block
+	svg
+		font-size: 60px
+		stroke: #fff
+		stroke-width: 2px
+		fill: transparent
+		transition: all .1s
+		position: relative
+.ui-state-active
+	.adv-tabs__nav-link
+		svg
+			+rmin(992)
+				font-size: 160px
+.ui-state-active
+	background: #e3ac32
+	+rmin(992)
+		margin-top: -50px
+		&:after
+			content: ''
+			position: absolute
+			+vcenter
+			top: 126%
+			+s(empty-arrow)
+.is-night-js
+	.ui-state-active
+		background-color: #ab5c4e
+		background-image: linear-gradient(165deg, #b87f42 0%, #ae5e4e 100%)
+.adv-tabs__content
+	color: $black
+	font: 300 20px/1.2em "Din Light", sans-serif
+	padding: 20px 76px 
+	text-align: center
+	background-color: #e3ac2c
+	background-image: linear-gradient(165deg, rgba(205, 199, 42, 0.4) 0%, transparent 100%)
+	display: table
+	width: 100%
+	+rmin(991)
+		min-height: 112px
+	+r(1199)
+		padding: 20px 46px 
+	+r(991)
+		padding: 20px 10px 
+		min-height: 136px
+	+r(767)
+		min-height: 304px
+	p
+		display: table-cell
+		vertical-align: middle
+.is-night-js
+	.adv-tabs__content
+		background-color: #ab5c4e
+		background-image: linear-gradient(165deg, rgba(205, 199, 42, 0.5) 0%, #ab5c4e 100%)
+
