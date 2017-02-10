@@ -3235,5 +3235,5 @@ $(document).ready(function () {
 			if (_this.hasClass('slick-initialized')) return;
 			_this.slick(option);
 		});
-	}
+	};
 });

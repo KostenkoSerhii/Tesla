@@ -1,7 +1,7 @@
 .planning
 	padding-top: 58px
 .planning__h2
-	margin-bottom: 55px
+	margin-bottom: 59px
 .tabs-nav
 	text-align: center
 .tabs-nav__item
@@ -70,9 +70,11 @@
 .tabs-content
 	width: 780px
 	margin: 40px auto 0
+	+clr
 .tabs-slider__slide
 	text-align: center
 	color: $main-text-color
+	margin: 10px
 .tabs-popup-link
 	color: inherit
 	font: $main-text-font
@@ -84,5 +86,63 @@
 .tabs-slider__name
 	font-size: 20px
 	color: $main-text-color
-.slick-prev, .slick-next
-	background: #000
+.tabs-slider__more-small
+	@extend %red-text-underline
+.tabs-slider__more
+	display: none
+.tabs-slider
+	.slick-prev, .slick-next
+		top: 34%
+		&:before 
+			content: ''
+			+coverdiv
+	.slick-prev
+		left: -102px
+	.slick-next
+		right: -119px
+.slick-prev
+	&:before
+		+arr(50, 50, #33997f, l)
+.slick-next
+	&:before
+		+arr(50, 50, #33997f, r)
+.is-night-js
+	.slick-prev
+		&:before
+			+arr(50, 50, #586d98, l)
+	.slick-next
+		&:before
+			+arr(50, 50, #586d98, r)
+.tabs-popup-link
+	display: block
+	transition: all .3s
+	border: 1px solid transparent
+	&:hover
+		border-color: #e3ac2c
+.tabs-content__footer
+	margin-top: 30px
+.tabs-content__footer-left
+	float: left
+	width: 30%
+.tabs-content__right
+	float: right
+
+.tabs-content__footer-left
+	color: #2e487e
+	font: $main-big-text-font
+	text-transform: uppercase
+	text-align: center
+	a
+		display: inline-block
+		margin-top: 10px
+		@extend %red-text-underline
+		text-transform: none
+.general-plan
+	text-transform: uppercase
+	font: $main-big-text-font
+	color: $main-text-color
+	display: inline-block
+	width: 488px
+	padding: 30px
+	border: 1px solid #d5d5d5
+	text-align: center
