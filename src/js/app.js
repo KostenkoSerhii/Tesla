@@ -71,6 +71,15 @@ $(document).ready(function(){
 
 		};
 		/*window width*/
+		$("#planntabs1").tabs({
+			show: { effect: "blind", duration: 300 },
+			hide: { effect: "blind", duration: 300 }
+			});
 
+ $('.tabs-slider').slick({
+
+  slidesToShow: 3,
+  slidesToScroll: 1
+  });
 		// 
 	});

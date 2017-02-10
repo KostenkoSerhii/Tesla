@@ -2,3 +2,87 @@
 	padding-top: 58px
 .planning__h2
 	margin-bottom: 55px
+.tabs-nav
+	text-align: center
+.tabs-nav__item
+	display: inline-block
+	width: 233px
+	margin-right: 15px
+	&:last-of-type
+		margin-right: 0
+.tabs-nav__link
+	display: block
+	border-bottom: 1px solid  
+	border-color: #00805f
+	text-transform: uppercase
+	color: $main-text-color
+	padding: 27px 10px
+	font: $main-big-text-font
+	+rmin(1200)
+		overflow: hidden
+		position: relative
+		transition: all .3s
+		&:before, &:after
+			content: ''
+			position: absolute
+			background: $tabs-border-color-day
+			width: 1px
+			height: 0
+			bottom: 0
+			transition: all .3s
+		&:before
+			left: 0
+		&:after
+			right: 0
+		&:hover
+			&:before, &:after
+				height: 100%
+			.tabs-nav__item-topline
+				width: 100%
+.tabs-nav__item-topline
+	position: absolute
+	content: ''
+	top: 0
+	left: 50%
+	transform: translateX(-50%)
+	height: 1px
+	width: 0%
+	background: $tabs-border-color-day
+	transition: all .3s
+.is-night-js
+	.tabs-nav__link
+		border-bottom: 1px solid  $tabs-border-color-nigth
+		.tabs-nav__item-topline, &:before, &:after
+			background:  $tabs-border-color-nigth
+.ui-tabs-active
+	.tabs-nav__link
+		color: $white
+.is-day-js
+	.ui-tabs-active
+		.tabs-nav__link
+			background-color: #00805f
+			background-image: linear-gradient(165deg, #2b9757 0%, #00805f 100%)
+.is-night-js
+	.ui-tabs-active
+		.tabs-nav__link
+			background-color: #2e487e
+			background-image: linear-gradient(165deg, #4d537c 0%, #2e487e 100%)
+.tabs-content
+	width: 780px
+	margin: 40px auto 0
+.tabs-slider__slide
+	text-align: center
+	color: $main-text-color
+.tabs-popup-link
+	color: inherit
+	font: $main-text-font
+.tabs-slider__img
+	margin:  0 auto
+	width: 233px
+	height: 300px
+	+cover
+.tabs-slider__name
+	font-size: 20px
+	color: $main-text-color
+.slick-prev, .slick-next
+	background: #000

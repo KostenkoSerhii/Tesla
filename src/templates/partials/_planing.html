@@ -2,8 +2,46 @@
 	<div class="planning">
 		<!--begin container-->
 		<div class="container">
-		<h2 class="h2 planning__h2">ПЛАНИРОВКИ</h2>
-		
+			<h2 class="h2 planning__h2">ПЛАНИРОВКИ</h2>
+
+			<div  class="tabs" id="planntabs1">
+				<ul class="tabs-nav">
+					{% for test in tests.mainplanntabs %}
+					<li class="tabs-nav__item"><a class="tabs-nav__link" href="#{{test.id}}">{{test.navText}}
+						<div class="tabs-nav__item-topline"></div>
+					</a></li>
+					{% endfor %}
+				</ul>
+				{% for test in tests.mainplanntabs %}
+				<div class="tabs-content" id="{{test.id}}">
+						<div class="tabs-slider">
+							{% for test in tests.mainplannslider %}
+							<div class="tabs-slider__slide">
+								<a class="tabs-popup-link" href="{{test.popuplink}}">
+									<div class="tabs-slider__img" style="background-image: url('{{test.img}}');"></div>
+									<span class="tabs-slider__name">{{test.name}}</span>
+									<p class="tabs-slider__area">площадь: {{test.area}}м<sup>2</sup></p>
+									<p class="tabs-slider__more-small">Подробнее</p>
+									<div class="tabs-slider__more">Подробнее</div>
+								</a>
+							</div>
+							{% endfor %}
+						</div>
+					<div class="tabs-content__footer">
+						<div class="tabs-content__footer-left">
+							<p>Наличия квартир</p>
+							<a href="{{test.footerLeftLink1}}">Секция 1</a>
+							<a href="{{test.footerLeftLink2}}">Секция 2</a>
+						</div>
+						<div class="tabs-content__right">
+							<a class="general-plan" href="{{test.generalPlan}}">типовый план этажа</a>
+						</div>
+					</div>
+				</div>
+
+				{% endfor %}
+			</div>
+
 		</div>
 		<!--end container-->
 	</div>
