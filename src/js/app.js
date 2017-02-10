@@ -73,13 +73,27 @@ $(document).ready(function(){
 		/*window width*/
 		$("#planntabs1").tabs({
 			show: { effect: "blind", duration: 300 },
-			hide: { effect: "blind", duration: 300 }
+			hide: { effect: "blind", duration: 300 },
+			activate: function(event, ui) {
+				addSlider(ui.newPanel, '.tabs-slider', {
+					slidesToShow: 3,
+					slidesToScroll: 1
+				});
+			},
+			create: function(event, ui) {
+				addSlider(ui.panel, '.tabs-slider', {
+					slidesToShow: 3,
+					slidesToScroll: 1
+				});
+			}
+		});
+
+		function addSlider(container, slider, option) {
+			container.find(slider).each(function() {
+				var _this = $(this);
+				if (_this.hasClass('slick-initialized')) return;
+				_this.slick(option);
 			});
+		}
 
- $('.tabs-slider').slick({
-
-  slidesToShow: 3,
-  slidesToScroll: 1
-  });
-		// 
 	});
