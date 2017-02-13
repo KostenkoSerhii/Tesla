@@ -919,15 +919,6 @@ sup {
   vertical-align: top;
 }
 
-.popup-close {
-  font: 300 16px/1.5em "Din Light", sans-serif;
-  font-weight: 700;
-  cursor: pointer;
-  color: #ab5c4e;
-  position: absolute;
-  z-index: 25;
-}
-
 .slick-prev:before, .slick-next:before {
   opacity: 1;
 }
@@ -1538,6 +1529,11 @@ sup {
   background-image: linear-gradient(165deg, #3d9e63 0%, #178a6b 100%);
 }
 
+.is-night-js .map__content {
+  background-color: #2e487e;
+  background-image: linear-gradient(165deg, #5b6085 0%, #415887 100%);
+}
+
 .gallery {
   padding-top: 50px;
   padding-bottom: 60px;
@@ -1770,10 +1766,41 @@ sup {
   margin-right: 7px;
 }
 
+.popup-close {
+  font: 300 16px/1.5em "Din Light", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  color: #ab5c4e;
+  position: absolute;
+  z-index: 25;
+}
+
 .popup-close--large {
   right: 150px;
   top: 200px;
   font-size: 40px;
+}
+
+.popup-wrapper {
+  display: none;
+}
+
+.popup-wrapper-is-open {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 26;
+}
+
+.pop-slider__img-block {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 100vh;
+  width: 100vw;
 }
 
 @media only screen and (min-width: 320px){
