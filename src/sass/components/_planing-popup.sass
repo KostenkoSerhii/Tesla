@@ -1,0 +1,114 @@
+.planning-popup
+	position: fixed
+	top: 100px
+	left: 0
+	bottom: 0
+	right: 0
+	background: #fff
+	z-index: 25
+	overflow: auto
+	display: none
+	padding-top: 45px
+	+r(767)
+		top: 0
+.planning-popup-is-open
+	display: block
+.tabs-slider__name--popup
+	font-size: 30px
+	font-weight: 700
+.tabs-slider__area--popup
+	font-size: 20px
+	color: #00805f
+.is-night-js
+	.tabs-slider__area--popup
+		color: #2e487e
+.tabs-slider__img-left, .tabs-slider__img-right
+	display: inline-block
+	+cover
+	background-size: contain
+	width: 475px
+	height: 475px
+	+r(1199)
+		width: 300px
+		height: 300px
+	+r(767)
+		width: 280px
+		height: 280px
+		display: block
+		margin:  0 auto 10px
+.tabs-content-popup
+	padding-top: 50px
+	+r(767)
+		padding-top: 10px
+.tabs-slider__area--popup
+	margin-bottom: 50px
+	+r(757)
+		margin-bottom: 10px
+.slider-popup
+	.slick-prev, .slick-next
+		top: 50%
+	.slick-prev
+		+r(1350)
+			left: -50px
+		+r(1199)
+			left: 0
+	.slick-next
+		+r(1350)
+			right: -50px
+		+r(1199)
+			right: 0
+.download-pdf
+	font: 300 18px/65px "Din Light", sans-serif
+	text-transform: uppercase
+	color: $white
+	display: inline-block
+	background-color: #00805f
+	background-image: linear-gradient(165deg, #2b9757 0%, #00805f 100%)
+	width: 270px
+	height: 65px
+	vertical-align: top
+.doc-block--popup
+	margin-right: 30px
+	padding-top: 8px
+	+r(767)
+		display: block
+		margin: 0 auto 10px
+.dimensions
+	text-align: center
+	margin-top: 75px
+	padding: 0 130px
+	margin-bottom: 50px
+	+r(1199)
+		padding: 50px 
+	+r(991)
+		padding: 0
+	+r(767)
+		margin: 10px 0
+.dimensions__component
+	width: 200px
+	display: inline-block
+	font: $main-text-font
+	color: $main-text-color
+	text-align: left
+	margin-bottom: 8px
+	&:nth-of-type(3n+2)
+		margin-left: 48px
+		margin-right: 48px
+	+r(1199)
+		margin: 8px!important
+	div
+		display: inline-block
+		height: 34px
+		width: 34px
+		background-image: linear-gradient(165deg, #b77d43 0%, #ae614e 100%)
+		text-align: center
+		color: #fff
+		line-height: 34px
+		border-radius: 50%
+		margin-right: 7px
+.popup-close--large
+	right: 150px
+	top: 200px
+	font-size: 40px
+	+r(767)
+		right: 20px

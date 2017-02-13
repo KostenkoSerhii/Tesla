@@ -1,0 +1,61 @@
+	<!--begin planning-->
+	<div class="planning-popup">
+		<!--begin container-->
+		<div class="popup-close popup-close--large popup-close-js">X</div>
+		<div class="container">
+			<div  class="tabs" id="planntabs2">
+				<ul class="tabs-nav">
+					{% for test in tests.mainplanntabspopup %}
+					<li class="tabs-nav__item"><a class="tabs-nav__link" href="#{{test.id}}">{{test.navText}}
+						<div class="tabs-nav__item-topline"></div>
+					</a></li>
+					{% endfor %}
+				</ul>
+				{% for test in tests.mainplanntabspopup %}
+				<div class="tabs-content-popup" id="{{test.id}}">
+					<div class="tabs-slider slider-popup slider-popup-js">
+						{% for test in tests.mainplannsliderpopup %}
+						<div class="tabs__slide">
+							<span class="tabs-slider__name tabs-slider__name--popup">{{test.name}}</span>
+							<p class="tabs-slider__area tabs-slider__area--popup">Общая площадь: {{test.area}}м<sup>2</sup></p>
+							<div class="tabs-slider__img-left" style="background-image: url('{{test.img}}');"></div>
+							<div class=" tabs-slider__img-right" style="background-image: url('{{test.img2}}');"></div>
+							<div class="dimensions">
+								<div class="dimensions__component">
+									<div>1</div>Коридор: 25,53м<sup>2</sup>
+								</div>
+								<div class="dimensions__component">
+								<div>3</div>Гостиная: 25,53м<sup>2</sup>
+								</div>
+								<div class="dimensions__component">
+									<div>5</div>Спальня: 25,53м<sup>2</sup>
+								</div>
+								<div class="dimensions__component">
+									<div>2</div>Кухня: 25,53м<sup>2</sup>
+								</div>
+								<div class="dimensions__component">
+									<div>4</div>Санузел: 25,53м<sup>2</sup>
+								</div>
+								<div class="dimensions__component">
+									<div>6</div>Балкон: 25,53м<sup>2</sup>
+								</div>
+							</div>
+							<div class=" doc-block doc-block--popup">
+								<p>Наличия квартир</p>
+								<a href="{{test.footerLeftLink1}}">Секция 1</a>
+								<a href="{{test.footerLeftLink2}}">Секция 2</a>
+							</div>
+							<a class="download-pdf" href="#">Скачать pdf</a>
+						</div>
+						{% endfor %}
+					</div>
+
+				</div>
+
+				{% endfor %}
+			</div>
+
+		</div>
+		<!--end container-->
+	</div>
+	<!--end planning-->

@@ -1,7 +1,11 @@
 .planning
 	padding-top: 58px
+	+r(767)
+		padding-top: 20px
 .planning__h2
 	margin-bottom: 59px
+	+r(767)
+		margin-bottom: 10px
 .tabs-nav
 	text-align: center
 .tabs-nav__item
@@ -10,6 +14,8 @@
 	margin-right: 15px
 	&:last-of-type
 		margin-right: 0
+	+r(1199)
+		margin-right: 15px!important
 .tabs-nav__link
 	display: block
 	border-bottom: 1px solid  
@@ -39,6 +45,9 @@
 				height: 100%
 			.tabs-nav__item-topline
 				width: 100%
+	+r(767)
+		padding: 10px 15px
+		font-size: 15px
 .tabs-nav__item-topline
 	position: absolute
 	content: ''
@@ -69,15 +78,16 @@
 			background-image: linear-gradient(165deg, #4d537c 0%, #2e487e 100%)
 .tabs-content
 	width: 780px
-	margin: 40px auto 0
+	margin: 27px auto 0
 	+clr
-.tabs-slider__slide
+	+r(991)
+		width: auto
+.tabs__slide
 	text-align: center
-	color: $main-text-color
 	margin: 10px
-.tabs-popup-link
-	color: inherit
+.tabs-slider__area, .tabs-slider__name
 	font: $main-text-font
+	color: $black
 .tabs-slider__img
 	margin:  0 auto
 	width: 233px
@@ -90,16 +100,32 @@
 	@extend %red-text-underline
 .tabs-slider__more
 	display: none
+	position: absolute
+	bottom: 0
+	left: 0
+	width: 100%
+	min-height: 82px
+	text-align: center
+	color: transparent
+	font: 300 20px/82px "Din Light", sans-serif
 .tabs-slider
 	.slick-prev, .slick-next
-		top: 34%
+		top: 37%
 		&:before 
 			content: ''
 			+coverdiv
 	.slick-prev
 		left: -102px
+		+r(1199)
+			left: -52px
+		+r(991)
+			left: 0px
 	.slick-next
 		right: -119px
+		+r(1199)
+			right: -52px
+		+r(991)
+			right: 0px
 .slick-prev
 	&:before
 		+arr(50, 50, #33997f, l)
@@ -115,28 +141,56 @@
 			+arr(50, 50, #586d98, r)
 .tabs-popup-link
 	display: block
-	transition: all .3s
 	border: 1px solid transparent
-	&:hover
-		border-color: #e3ac2c
-.tabs-content__footer
+	position: relative
+	+rmin(992)
+		&:hover
+			border-color: #e3ac2c
+			.tabs-slider__more
+				display: block
+				color: $black
+				background-color: #e3ac2c
+				background-image: linear-gradient(165deg, #dcb52b 0%, #e3ac2c 100%)
+.is-night-js
+	.tabs-popup-link
+		+rmin(992)
+			&:hover
+				border-color: #ab5c4e
+				.tabs-slider__more
+					background-color: #ab5c4e
+					background-image: linear-gradient(165deg, #b67e42 0%, #ab5c4e 100%)
+.tabs__footer
 	margin-top: 30px
-.tabs-content__footer-left
+	+r(767)
+		margin-top: 10px
+.tabs__footer-left
 	float: left
 	width: 30%
-.tabs-content__right
+	margin-top: 21px
+	+r(767)
+		float: none
+		width: 100%
+		margin-top: 0
+.tabs__footer-right
 	float: right
-
-.tabs-content__footer-left
-	color: #2e487e
+	+r(767)
+		float: none
+.doc-block
+	display: inline-block
+	color: #00805f
 	font: $main-big-text-font
 	text-transform: uppercase
 	text-align: center
 	a
 		display: inline-block
-		margin-top: 10px
+		margin-top: 6px
 		@extend %red-text-underline
 		text-transform: none
+		&:first-of-type
+			margin-right: 13px
+.is-night-js
+	.google-doc-block
+		color: #2e487e
 .general-plan
 	text-transform: uppercase
 	font: $main-big-text-font
@@ -146,3 +200,12 @@
 	padding: 30px
 	border: 1px solid #d5d5d5
 	text-align: center
+	+r(991)
+		width: 350px
+	+r(767)
+		width: 280px
+		font-size: 16px
+		padding: 10px
+		margin: 0 auto
+		display: block
+		margin-top: 20px

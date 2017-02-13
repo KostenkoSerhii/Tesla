@@ -3213,18 +3213,31 @@ $(document).ready(function () {
 	};
 	/*window width*/
 	$("#planntabs1").tabs({
-		show: { effect: "blind", duration: 300 },
-		hide: { effect: "blind", duration: 300 },
+		//show: { effect: "fadeIn", duration: 300 },
+		//hide: { effect: "fadeOut", duration: 300 },
 		activate: function activate(event, ui) {
-			addSlider(ui.newPanel, '.tabs-slider', {
+			addSlider(ui.newPanel, '.tabs-slider-js', {
 				slidesToShow: 3,
-				slidesToScroll: 1
+				slidesToScroll: 1,
+				responsive: [{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 1
+					}
+				}]
 			});
 		},
 		create: function create(event, ui) {
-			addSlider(ui.panel, '.tabs-slider', {
+			addSlider(ui.panel, '.tabs-slider-js', {
 				slidesToShow: 3,
-				slidesToScroll: 1
+				slidesToScroll: 1,
+				responsive: [{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 1
+					}
+				}]
+
 			});
 		}
 	});
@@ -3236,4 +3249,22 @@ $(document).ready(function () {
 			_this.slick(option);
 		});
 	};
+
+	$(".planning .slide-js").on('click', function (e) {
+		e.preventDefault();
+		$("body").addClass('is-hidden-js');
+		$(".planning-popup").addClass("planning-popup-is-open");
+		$("#planntabs2").tabs({
+			activate: function activate(event, ui) {
+				addSlider(ui.newPanel, '.slider-popup-js', {});
+			},
+			create: function create(event, ui) {
+				addSlider(ui.panel, '.slider-popup-js', {});
+			}
+		});
+	});
+	$(".planning-popup .popup-close-js").on("click", function () {
+		$(".planning-popup").removeClass("planning-popup-is-open");
+		$("body").removeClass('is-hidden-js');
+	});
 });
