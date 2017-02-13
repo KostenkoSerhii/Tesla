@@ -72,4 +72,20 @@ sup
 	cursor: pointer
 	color:  #ab5c4e
 	position: absolute
-	z-index: 21
+	z-index: 25
+.slick-prev, .slick-next
+	&:before
+		opacity: 1
+.slick-prev
+	&:before
+		+arr(50, 50, #33997f, l)
+.slick-next
+	&:before
+		+arr(50, 50, #33997f, r)
+.is-night-js
+	.slick-prev
+		&:before
+			+arr(50, 50, #586d98, l)
+	.slick-next
+		&:before
+			+arr(50, 50, #586d98, r)

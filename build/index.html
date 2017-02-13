@@ -334,7 +334,43 @@
         </div>
         <!--end container-->
       </div>
-      <!--end planning--><a class="stock" href="#">
+      <!--end planning-->
+      <!--begin map-container-->
+      <div class="map-container">
+        <div class="map" id="map"> </div>
+        <!--begin map__content-->
+        <div class="map__content">
+          <h2 class="h2 map-container__h2">МЕСТОПОЛОЖЕНИЕ</h2>
+          <p class="map-container__article">Жилой комплекс "Tesla house" расположен в Оболонском районе города Киева на пересечении ул Полярной и ул. Петра Дегтяренко 22А </p>
+        </div>
+        <!--end map__content-->
+      </div>
+      <!--end map-container-->
+      <!--begin gallery-->
+      <div class="gallery">
+        <div class="container">
+          <h2 class="h2 gallery__h2">ГАЛЕРЕЯ</h2>
+          <!--begin slider-wrapper-->
+          <div class="slider-wrapper">
+            <div class="slider gall-slider-js">
+              <div class="slider__item">
+                <div class="slider__img-block" style="background-image: url('img/gall2.jpg');"></div>
+              </div>
+              <div class="slider__item">
+                <div class="slider__img-block" style="background-image: url('img/gall1.jpg');"></div>
+              </div>
+              <div class="slider__item">
+                <div class="slider__img-block" style="background-image: url('img/gall3.jpg');"></div>
+              </div>
+              <div class="slider__item">
+                <div class="slider__img-block" style="background-image: url('img/gall2.jpg');"></div>
+              </div>
+            </div>
+          </div>
+          <!--end slider-wrapper-->
+        </div>
+      </div>
+      <!--end gallery--><a class="stock" href="#">
 	Акция
 </a>
       <!--begin fixed-line-->
@@ -360,7 +396,7 @@
       <!--begin planning-->
       <div class="planning-popup">
         <!--begin container-->
-        <div class="popup-close popup-close--large popup-close-js">X</div>
+        <div class="popup-close popup-close--large popup-close-js ">X</div>
         <div class="container">
           <div class="tabs" id="planntabs2">
             <ul class="tabs-nav">
@@ -718,6 +754,28 @@
         <!--end container-->
       </div>
       <!--end planning-->
+      <!--begin gallery-->
+      <div class="gallery-popup">
+        <!--begin slider-wrapper-->
+        <div class="slider-wrapper">
+          <div class="slider gall-slider-js">
+            <div class="slider__item">
+              <div class="slider__img-block" style="background-image: url('img/gall2.jpg');"></div>
+            </div>
+            <div class="slider__item">
+              <div class="slider__img-block" style="background-image: url('img/gall1.jpg');"></div>
+            </div>
+            <div class="slider__item">
+              <div class="slider__img-block" style="background-image: url('img/gall3.jpg');"></div>
+            </div>
+            <div class="slider__item">
+              <div class="slider__img-block" style="background-image: url('img/gall2.jpg');"></div>
+            </div>
+          </div>
+        </div>
+        <!--end slider-wrapper-->
+      </div>
+      <!--end gallery-->
       <!-- 	
 <h1>Index page</h1>
 
@@ -740,6 +798,67 @@
     <!-- END content -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
+    <script>
+      /*begin map*/
+      var map;
+      var initMap = function()
+      {
+        map = new google.maps.Map(document.getElementById('map'),
+        {
+          center:
+          {
+            lat: 50.504536,
+            lng: 30.475771
+          },
+          zoom: 15,
+          scrollwheel: false
+        });
+        setMarkers(map, places);
+      }
+      var places = [
+        ['Частная школа', 50.503975, 30.478615, 'img/marker1.png'],
+        ['Аптека', 50.503572, 30.472735, 'img/marker2.png'],
+        ['Спортзал', 50.503585, 30.467918, 'img/marker3.png'],
+        ['Квартал таунхаусов Кронбург', 50.501970, 30.470793, 'img/marker4.png']
+      ];
+
+      function setMarkers(map)
+      {
+        var marker, i;
+        for (i = 0; i < places.length; i++)
+        {
+          var description = places[i][0]
+          var lat = places[i][1]
+          var long = places[i][2]
+          var img = places[i][3]
+          var latshort = places[i][1].toFixed(5);
+          var longshort = places[i][2].toFixed(5);
+          latlngset = new google.maps.LatLng(lat, long);
+          marker = new google.maps.Marker(
+          {
+            position: latlngset,
+            map: map,
+            icon: img
+          });
+          // центр карты п по маркеру  map.setCenter(marker.getPosition());
+          /*закомментить если не нужны всплывающие окна*/
+          var content = "<div class='map-marker-wrapper'><p class='map-marker-descr'>" + description + "</p>" + "</div>";
+          var infowindow = new google.maps.InfoWindow();
+          google.maps.event.addListener(marker, 'click', (function(marker, content, infowindow)
+          {
+            return function()
+            {
+              infowindow.setContent(content);
+              infowindow.open(map, marker);
+            };
+          })(marker, content, infowindow));
+          /*закомментить если не нужны всплывающие окна*/
+        }
+      }
+      /*end map*/
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA04VMqMvV-ifF4mtvOnsUkf3Lw9F9ivAg&callback=initMap" type="text/javascript"></script>
     <!-- END scripts -->
   </body>
 

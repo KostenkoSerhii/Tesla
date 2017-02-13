@@ -1,27 +1,77 @@
 {% import "partials/_mixins.html" as mixins %}
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="theme-color" content="#fff">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" media="all" href="css/app.css">
-    {# {% include "../partials/_media-tags.html" %} #}
-  </head>
-  <body class="is-day-js">
+<head>
+  <meta charset="utf-8">
+  <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#fff">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" media="all" href="css/app.css">
+  {# {% include "../partials/_media-tags.html" %} #}
+</head>
+<body class="is-day-js">
 
-    <!-- BEGIN content -->
-    <div class="out">
-      {% block content %}{% endblock %}
-    </div>
-    <!-- END content -->
+  <!-- BEGIN content -->
+  <div class="out">
+    {% block content %}{% endblock %}
+  </div>
+  <!-- END content -->
 
-    <!-- BEGIN scripts -->
-    <script type="text/javascript" src="js/app.js"></script>
-    <!-- END scripts -->
+  <!-- BEGIN scripts -->
+  <script type="text/javascript" src="js/app.js"></script>
 
-  </body>
+
+  <script>
+    /*begin map*/
+    var map;
+    var initMap =  function () {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 50.504536, lng: 30.475771},
+        zoom: 15,
+        scrollwheel: false
+      });
+      setMarkers(map, places);
+    }
+    var places = [
+    ['Частная школа', 50.503975, 30.478615, 'img/marker1.png'],
+    ['Аптека', 50.503572, 30.472735, 'img/marker2.png'],
+    ['Спортзал', 50.503585, 30.467918, 'img/marker3.png'],
+    ['Квартал таунхаусов Кронбург', 50.501970, 30.470793, 'img/marker4.png']
+    ];
+    function setMarkers(map) {
+      var marker, i;
+      for (i = 0; i < places.length; i++) {
+        var description = places[i][0]
+        var lat = places[i][1]
+        var long = places[i][2]
+        var img =  places[i][3]
+        var latshort = places[i][1].toFixed(5);
+        var longshort = places[i][2].toFixed(5);
+        latlngset = new google.maps.LatLng(lat, long);
+        marker = new google.maps.Marker({
+          position: latlngset,
+          map: map,
+          icon: img
+        });
+      // центр карты п по маркеру  map.setCenter(marker.getPosition());
+      /*закомментить если не нужны всплывающие окна*/
+      var content = "<div class='map-marker-wrapper'><p class='map-marker-descr'>" +description +"</p>" + "</div>";
+      var infowindow = new google.maps.InfoWindow();
+      google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+        return function() {
+          infowindow.setContent(content);
+          infowindow.open(map,marker);
+        };
+      })(marker,content,infowindow)); 
+      /*закомментить если не нужны всплывающие окна*/
+    }
+  }
+  /*end map*/
+</script>
+  <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA04VMqMvV-ifF4mtvOnsUkf3Lw9F9ivAg&callback=initMap"
+  type="text/javascript"></script>
+  <!-- END scripts -->
+</body>
 </html>

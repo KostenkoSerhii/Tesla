@@ -5,6 +5,7 @@
 //=include lib/svgxuse.min.js
 //=include lib/scrollto.min.js
 //=include lib/jquery-ui.min.js
+//=include lib/jquery.magnific-popup.min.js
 
 
 sayHello();
@@ -135,4 +136,46 @@ $(document).ready(function(){
 
 		});
 
+		$(".gall-slider-js").slick({
+			infinite: true,
+			centerMode: true,
+			slide: '.slider__item',
+			slidesToShow: 1,
+			centerPadding: '120px',
+			variableWidth: true,
+			//asNavFor: '.js-gallery-popup',
+			arrows: true,
+			responsive: [
+			{
+				breakpoint: 1025,
+				settings: {
+					centerMode: false,
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 767,
+				settings: {
+					centerMode: false,
+					slidesToShow: 1
+				}
+			},
+			]
+		});
+
+		/*galleries popup*/
+		$('.more-gallery').on('click', function () {
+			$(".popup-gallery").magnificPopup('open');
+		});
+
+		$('.popup-gallery').each(function () {
+			$(this).magnificPopup({
+				delegate: 'a',
+				type: 'image',
+				gallery: {
+					enabled: true
+				}
+			});
+		});
+		/*galleries popup*/
 	});

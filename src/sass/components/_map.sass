@@ -1,0 +1,32 @@
+.map-container
+	position: relative
+.map
+	width: 100%
+	height: 600px
+	+r(767)
+		height: 300px
+.map-container__h2
+	color: #fff
+.map__content
+	width: 100%
+	z-index: 2
+	position: absolute
+	bottom: 52px
+	padding: 48px 0
+	opacity: .8
+	left: 0
+	color: #fff
+	text-align: center
+	font: 300 16px/1.25 "Din Light", sans-serif
+	+r(767)
+		font-size: 14px
+		padding: 10px 0
+		bottom: 0
+.map-container__article
+	max-width: 590px
+	margin: 0 auto
+	margin-top: 14px
+.is-day-js
+	.map__content
+		background-color: #00805f
+		background-image: linear-gradient(165deg, #3d9e63 0%, #178a6b 100%)
