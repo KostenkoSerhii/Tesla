@@ -121,6 +121,19 @@
 		right: 20px
 .popup-wrapper
 	display: none
+	.popup-close
+		width: 104px
+		height: 104px
+		text-align: center
+		line-height: 104px
+		background-color: rgba(255, 255, 255, 0.7)
+		border-radius: 50%
+		top: 50px
+		right: 50px
+		+r(767)
+			width: 50px
+			height: 50px
+			line-height: 50px
 .popup-wrapper-is-open
 	display: block
 	position: fixed
@@ -129,8 +142,38 @@
 	bottom: 0
 	left: 0
 	z-index: 26
-
-.pop-slider__img-block
+	+r(767)
+		background: #fff
+.popup-slider__img-block
 	+cover
-	height: 100vh
 	width: 100vw
+	height: 100vh
+
+
+.popup-slider__item
+	height: 100%
+	width: 100%
+
+.popup-slider
+	.slick-prev, .slick-next
+		bottom: 90px
+		top: auto
+		width: 104px
+		height: 104px
+		background-color: rgba(255, 255, 255, 0.7)
+		border-radius: 50%
+		&:before
+			+vcenter
+		+r(767)
+			width: 50px
+			height: 50px
+			background: none
+	.slick-prev
+		left: 42%
+		+r(1350)
+			left: 35%
+	.slick-next
+		right: 42%
+		+r(1350)
+		right: 35%
+

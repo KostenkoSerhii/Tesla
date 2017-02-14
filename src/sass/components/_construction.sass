@@ -1,0 +1,101 @@
+.construction
+	padding-bottom: 46px
+.construction__h2
+	margin-top: 40px
+	margin-bottom: 30px
+.years-block
+	text-align: center
+	margin-top: 10px
+	margin-bottom: 20px
+.years-block__link
+	display: inline-block
+	margin-right: 18px
+	color: $green
+	text-transform: uppercase
+	font: 300 30px/1em "Din Light", sans-serif
+	position: relative
+	&:last-of-type
+		margin-right: 0
+	&:after
+		content: ''
+		position: absolute
+		bottom: -6px
+		left: 0
+		width: 0%
+		height: 2px
+		background: $green
+		transition: all .3s
+.is-night-js
+	.years-block__link
+		color: $blue-bg
+.is-active-year
+	&:after
+		width: 100%
+.is-night-js
+	.is-active-year
+		&:after
+			background: $blue-bg
+.date-tabs__nav
+	display: inline-block
+.nav-wrapper
+	text-align: center
+.nav-wrapper__month
+	display: inline-block
+	color: $yellow-darken
+	font: $main-text-font
+	margin-right: 15px
+	margin-bottom: 10px
+.date-tabs__nav-item
+	display: inline-block
+	margin-right: 13px
+	position: relative
+	&:last-of-type
+		margin-right: 0
+		.date-tabs__nav-link
+			&:after, &:before
+				display: none
+	+r(767)
+		margin: 10px!important
+.is-night-js
+	.date-tabs__nav-item
+		&:after
+			background: #2e487e
+.date-tabs__nav-link
+	width: 30px
+	height: 30px
+	display: block
+	color: $white
+	font: $main-text-font
+	line-height: 30px
+	border-radius: 50%
+	+rmin(768)
+		&:before
+			width: 12px
+			height: 1px
+		&:before, &:after
+			content: ''
+			position: absolute
+			background: #00805f
+			right: -14px
+			top: 50%
+			transform: translateY(-50%)
+.ui-tabs-active
+	//.date-tabs__nav-link
+	//	&:after
+	//		+arr(5, 7, #00805f, r)
+.is-day-js
+	.ui-tabs-active
+		.date-tabs__nav-link
+			background-color: $yellow
+			background-image: linear-gradient(165deg, #deb131 0%,  #e3ac2f 100%)
+	.date-tabs__nav-link
+		background-color: #00805f
+		background-image: linear-gradient(165deg, #28925b 0%,  #0a8261 100%)
+.is-night-js
+	.ui-tabs-active
+		.date-tabs__nav-link
+			background-color: $orange
+			background-image: linear-gradient(165deg, #b57947 0%,  #ad5f50 100%)
+	.date-tabs__nav-link
+		background-color: #2e487e
+		background-image: linear-gradient(165deg, #5e5a7c 0%,  #3a4e7f 100%)

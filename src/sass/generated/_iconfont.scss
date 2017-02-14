@@ -21,6 +21,7 @@ $icon-7: "\EA09";
 $icon-8: "\EA0A";
 $icon-9: "\EA0B";
 $icon-facebook: "\EA0C";
+$icon-footer__logo: "\EA0D";
 
 
 %icon {
@@ -51,3 +52,4 @@ $icon-facebook: "\EA0C";
 .icon-8:before { content: $icon-8; }
 .icon-9:before { content: $icon-9; }
 .icon-facebook:before { content: $icon-facebook; }
+.icon-footer__logo:before { content: $icon-footer__logo; }

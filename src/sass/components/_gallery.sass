@@ -1,6 +1,6 @@
 .gallery
 	padding-top: 50px
-	padding-bottom: 60px
+	padding-bottom: 43px
 	+r(767)
 		padding-bottom: 20px
 .gallery__h2
@@ -9,18 +9,26 @@
 	width: 748px
 	height: 400px
 	+cover
+	+r(1100)
+		width: 100%
+	+r(767)
+		height: 300px
 .slider__item
 	position: relative
 	margin: 50px -40px
+	+r(1100)
+		margin: 0
 .slick-center
 	margin: 10px -40px 0
-	z-index: 2222
+	z-index: 222
 	height: 480px
+	+r(1100)
+		display: none
 	.slider__img-block
 		height: 480px
 		&:hover
 			cursor: url('../img/cursor.png'), auto
-.gallery
+.slider-wrapper
 	.slick-prev
 		left: 0
 	.slick-next

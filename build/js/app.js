@@ -3577,12 +3577,50 @@ $(document).ready(function () {
 		/*tabs*/
 		$("#adv-tabs").tabs({});
 		/*tabs*/
-	} else {
+	} else if (windowWidth < 768) {} else {
 		/*tabs*/
 		$("#adv-tabs").tabs({
 			event: "mouseover"
 		});
 		/*tabs*/
+
+		/*		$('.gall-slider-js').on('afterChange', function(event, slick, currentSlide){
+  var curSlide = currentSlide;
+  console.log(curSlide);
+  });*/
+
+		$(".gallery .slider__img-block").on("click", function () {
+			$("body").addClass('is-hidden-js');
+			$(".gall-popup-wrapper-js").addClass("popup-wrapper-is-open");
+			$(".gall-popup-slider-js").slick({
+				infinite: true,
+				slide: '.popup-slider__item',
+				slidesToShow: 1
+			});
+		});
+
+		$(".gall-popup-wrapper-js .popup-close").on("click", function () {
+			$("body").removeClass('is-hidden-js');
+			$(".gall-popup-wrapper-js").removeClass("popup-wrapper-is-open");
+		});
+
+		//$(".construction .slider__img-block").on("click", function(){
+		//	$("body").addClass('is-hidden-js');
+		//	$(".construction-popup-slider-js").addClass("popup-wrapper-is-open");
+		//	$(".construction-popup-slider-js").slick({
+		//		infinite: true,
+		//		slide: '.popup-slider__item',
+		//		slidesToShow: 1,
+		//		//initialSlide: curSlide
+		//	//asNavFor: '.gall-slider-js'
+		//});
+		//});
+		//$(".construction-popup-wrapper-js .popup-close").on("click", function(){
+		//	$("body").removeClass('is-hidden-js');
+		//	$(".construction-popup-wrapper-js").removeClass("popup-wrapper-is-open");
+		//});
+
+		/*galleries popup*/
 	};
 	/*window width*/
 	$("#planntabs1").tabs({
@@ -3640,7 +3678,7 @@ $(document).ready(function () {
 		$(".planning-popup").removeClass("planning-popup-is-open");
 		$("body").removeClass('is-hidden-js');
 	});
-
+	/*galleries popup*/
 	$(".gall-slider-js").slick({
 		infinite: true,
 		centerMode: true,
@@ -3648,48 +3686,73 @@ $(document).ready(function () {
 		slidesToShow: 1,
 		centerPadding: '120px',
 		variableWidth: true,
-		//	asNavFor: '.gall-popup-slider-js',
+		//asNavFor: '.gall-popup-slider-js',
 		arrows: true,
 		responsive: [{
-			breakpoint: 1025,
+			breakpoint: 1100,
 			settings: {
 				centerMode: false,
-				slidesToShow: 2
+				slidesToShow: 1,
+				centerPadding: '0',
+				variableWidth: false
 			}
-		}, {
-			breakpoint: 767,
+		}]
+	});
+	$(".stock-slider-js").slick({
+		infinite: true,
+		slide: '.stock-slider__item',
+		slidesToShow: 2,
+		arrows: true,
+		responsive: [{
+			breakpoint: 992,
 			settings: {
-				centerMode: false,
 				slidesToShow: 1
 			}
 		}]
 	});
-	$(".slider__img-block").on("click", function () {
-		$("body").addClass('is-hidden-js');
-		$(".popup-wrapper").addClass("popup-wrapper-is-open");
-		$(".gall-popup-slider-js").slick({
-			infinite: true,
-			slide: '.popup-slider__item',
-			slidesToShow: 1,
-			//	asNavFor: '.gall-slider-js',
-			arrows: true
-		});
+	$("#date-tabs").tabs({
+		//show: { effect: "fadeIn", duration: 300 },
+		//hide: { effect: "fadeOut", duration: 300 },
+		activate: function activate(event, ui) {
+			addSlider(ui.newPanel, '.construction-slider-js', {
+				infinite: true,
+				centerMode: true,
+				slide: '.slider__item',
+				slidesToShow: 1,
+				centerPadding: '120px',
+				variableWidth: true,
+				arrows: true,
+				responsive: [{
+					breakpoint: 1100,
+					settings: {
+						centerMode: false,
+						slidesToShow: 1,
+						centerPadding: '0',
+						variableWidth: false
+					}
+				}]
+			});
+		},
+		create: function create(event, ui) {
+			addSlider(ui.panel, '.construction-slider-js', {
+				infinite: true,
+				centerMode: true,
+				slide: '.slider__item',
+				slidesToShow: 1,
+				centerPadding: '120px',
+				variableWidth: true,
+				arrows: true,
+				responsive: [{
+					breakpoint: 1100,
+					settings: {
+						centerMode: false,
+						slidesToShow: 1,
+						centerPadding: '0',
+						variableWidth: false
+					}
+				}]
+
+			});
+		}
 	});
-
-	/*galleries popup*/
-
-	/*	$('.gall-popup-js').on('click', function () {
- 		$(".gallery-popup").magnificPopup('open');
- 		$('.gallery-popup').magnificPopup({
- 			
- 			mainClass: 'mfp-fade',
- 			items:{
- 				type: 'inline',
- 				src: '.slider-wrapper'
- 			}
- 	});
- 		
- });*/
-
-	/*galleries popup*/
 });

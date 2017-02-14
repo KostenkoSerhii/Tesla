@@ -1,0 +1,58 @@
+<!--begin construction-->
+<div class="construction">
+	<!--begin container-->
+	<div class="container">
+		<h2 class="h2 construction__h2">Ход строительства</h2>
+		<div class="date-tabs" id="date-tabs">
+			{% for test in tests.datetabs %}
+			<div class="date-tabs__content" id="{{test.id}}">
+				<!--begin slider-wrapper-->
+				<div class="slider-wrapper">
+					<div class="slider construction-slider-js">
+						<div class="slider__item" >
+							<!-- 	<a href="#gall-popup-1"> -->
+							<div class="slider__img-block" style="background-image: url('img/gall2.jpg');"></div>
+							<!-- </a> -->
+						</div>
+						<div class="slider__item" >
+							<!-- 	<a href="#gall-popup-1"> -->
+							<div class="slider__img-block" style="background-image: url('img/gall1.jpg');"></div>
+							<!-- </a> -->
+						</div>
+						<div class="slider__item">
+							<!-- 	<a href="#gall-popup-1"> -->
+							<div class="slider__img-block"  style="background-image: url('img/gall3.jpg');"></div>
+							<!-- </a> -->
+						</div>
+						<div class="slider__item" >
+							<!-- 	<a href="#gall-popup-1"> -->
+							<div class="slider__img-block" style="background-image: url('img/gall2.jpg');"></div>
+							<!-- 	</a> -->
+						</div>
+					</div>
+				</div>
+				<!--end slider-wrapper-->
+			</div>
+			{% endfor %}
+			<div class="years-block">
+				<a class="years-block__link is-active-year" href="#">2016</a>
+				<a class="years-block__link" href="#">2017</a>
+			</div>
+			<div class="nav-wrapper">
+				<span class="nav-wrapper__month">месяц:</span>
+				<ul class="date-tabs__nav">
+					{% for test in tests.datetabs %}
+					<li class="date-tabs__nav-item">
+						<a class="date-tabs__nav-link" href="#{{test.id}}">
+							{{test.navText}}
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--end container-->
+
+</div>
+<!--end construction-->
