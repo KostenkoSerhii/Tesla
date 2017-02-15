@@ -2,7 +2,7 @@
 <div class="footer" style="background-image: url('img/footer.jpg');">
 	<!--begin container-->
 	<!--begin developer-->
-	<div class="developer">
+	<div class="developer" id="dev-id">
 		<!--begin container-->
 		<div class="container">
 			<h2 class="h2 developer__h2">ЗАСТРОЙЩИК</h2>
@@ -24,7 +24,7 @@
 			<div class="office">
 				<a class="office__logo" href="#" style="background-image: url('img/footer-logo.png');"></a>
 				<div class="office__info">
-					<h2 class="h2 office__h2">ОФИС ПРОДАЖ</h2>
+					<h2 class="h2 office__h2 h2--white">ОФИС ПРОДАЖ</h2>
 					<div class="info-block office__info-block">
 						<p class="info-block__caption">
 							Ждем Вас по адресу
@@ -45,16 +45,31 @@
 					</div>
 				</div>
 				<div class="office__contacts">
-					<a class="office__phone" href="tel:+380440000000">+38 (044) 000 00 00</a>
-					<a class="office__mail" href="mailto:loreipsum@gmail">e-mail: loreipsum@gmail</a>
+					<div class="phone-mail-wrapper">
+						<a class="office__phone phone phone--small" href="tel:+380440000000">+38 (044) 000 00 00</a>
+						<a class="office__mail mail" href="mailto:loreipsum@gmail">e-mail: loreipsum@gmail</a>
+					</div>
 					<div class="socials">
-					<a class="socials__link" href="#"></a>
-					<a class="socials__link" href="#"></a>
-					<a class="socials__link" href="#"></a>
+						<a class="socials__link" href="#">{{mixins.icon('vk')}}</a>
+						<a class="socials__link" href="#">{{mixins.icon('fb')}}</a>
+						<a class="socials__link" href="#">{{mixins.icon('in')}}</a>
 					</div>
 				</div>
 			</div>
-			<div class="form-block"></div>
+			<div class="form-block">
+				<h2 class="h2 h2--white form-block__h2">У вас есть вопросы?</h2>
+				<!--begin form-wrapper-->
+				<div class="form-wrapper">
+					<form class="question">
+						<input  class="question__input" type="text" name="name" placeholder="Ваше имя">
+						<input  class="question__input" type="text" name="phone" placeholder="Ваш телефон">
+						<textarea class="question__textarea" placeholder="Ваш вопрос"></textarea>
+						<button  class="question__button" type="submit">Отправить</button>
+					</form>
+				</div>
+				<!--end form-wrapper-->
+
+			</div>
 		</div>
 	</div>
 	<!--end container-->

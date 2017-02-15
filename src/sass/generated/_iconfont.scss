@@ -21,7 +21,12 @@ $icon-7: "\EA09";
 $icon-8: "\EA0A";
 $icon-9: "\EA0B";
 $icon-facebook: "\EA0C";
-$icon-footer__logo: "\EA0D";
+$icon-fb: "\EA0D";
+$icon-footer__logo: "\EA0E";
+$icon-in: "\EA0F";
+$icon-month: "\EA10";
+$icon-sun: "\EA11";
+$icon-vk: "\EA12";
 
 
 %icon {
@@ -52,4 +57,9 @@ $icon-footer__logo: "\EA0D";
 .icon-8:before { content: $icon-8; }
 .icon-9:before { content: $icon-9; }
 .icon-facebook:before { content: $icon-facebook; }
+.icon-fb:before { content: $icon-fb; }
 .icon-footer__logo:before { content: $icon-footer__logo; }
+.icon-in:before { content: $icon-in; }
+.icon-month:before { content: $icon-month; }
+.icon-sun:before { content: $icon-sun; }
+.icon-vk:before { content: $icon-vk; }

@@ -3,22 +3,24 @@
 //=include lib/jquery.min.js
 //=include lib/slick.min.js
 //=include lib/svgxuse.min.js
-//=include lib/scrollto.min.js
 //=include lib/jquery-ui.min.js
 //=include lib/jquery.magnific-popup.min.js
 
 
 sayHello();
 $(document).ready(function(){
-	/*fixed-line*/
-	var	firstScreenHeight = $(".first-screen-js").height();
+//=include components/scrollto.js
+$("body").addClass("loaded");
+
+/*fixed-line*/
+var	firstScreenHeight = $(".first-screen-js").height();
 	//alert(firstScreenHeight);
 	var $fixedLine = $(".fixed-line");
 	$(window).scroll(function(){
-		if ( $(this).scrollTop() > firstScreenHeight && $fixedLine.hasClass("in-not-fixed") ){
-			$fixedLine.removeClass("in-not-fixed").addClass("fixed-line-fixed");
-		} else if($(this).scrollTop() <= firstScreenHeight && $fixedLine.hasClass("fixed-line-fixed")) {
-			$fixedLine.removeClass("fixed-line-fixed").addClass("in-not-fixed");
+		if ( $(this).scrollTop() > firstScreenHeight && $fixedLine.hasClass("is-not-fixed") ){
+			$fixedLine.removeClass("is-not-fixed").addClass("is-line-fixed");
+		} else if($(this).scrollTop() <= firstScreenHeight && $fixedLine.hasClass("is-line-fixed")) {
+			$fixedLine.removeClass("is-line-fixed").addClass("is-not-fixed");
 		}
 	});
 	/*fixed-line*/
@@ -261,4 +263,8 @@ $(document).ready(function(){
 				});
 			}
 		});
+	setTimeOut(function(){
+		$("body").addClass("loaded");
+	}, 0);
+	
 });

@@ -13,14 +13,19 @@
   <body class="is-day-js">
     <!-- BEGIN content -->
     <div class="out">
+      <div class="preload-block">
+        <div class="pl preload-block__left"></div>
+        <div class="pl preload-block__right"></div>
+      </div>
+      <div class="round1"></div>
       <!--begin first-screen-->
-      <div class="first-screen first-screen-js">
+      <div class="first-screen first-screen-js" id="main">
         <h1 class="h1">Tesla House</h1>
         <!--begin container-large-->
         <div class="container-large">
           <div class="switch">
-            <a class="switch__month" href="#"></a>
-            <a class="switch__sun" href="#"></a>
+            <a class="switch__month" href="#"> <svg class="icon icon-month"><use xlink:href="img/sprite.svg#icon-month"></use></svg> </a>
+            <a class="switch__sun" href="#"> <svg class="icon icon-sun"><use xlink:href="img/sprite.svg#icon-sun"></use></svg> </a>
           </div> <a class="phone first-screen__phone" href="tel:80670000000">8 067 000 00 00</a>
           <a class="logo" href="#"></a>
           <div class="menu-btn">
@@ -28,12 +33,12 @@
           </div>
           <!--begin nav-->
           <ul class="nav">
-            <li class="nav__item"><a class="nav__links" href="#">Главная</a></li>
-            <li class="nav__item"><a class="nav__links" href="#">ПРИЕМУЩЕСТВА</a></li>
-            <li class="nav__item"><a class="nav__links" href="#">МЕСТОПОЛОЖЕНИЕ</a></li>
-            <li class="nav__item"><a class="nav__links" href="#">ПЛАНИРОВКИ</a></li>
-            <li class="nav__item"><a class="nav__links" href="#">ЗАСТРОЙЩИК</a></li>
-            <li class="nav__item"><a class="nav__links" href="#">КОНТАКТЫ</a></li>
+            <li class="nav__item"><a class="nav__links" href="#main">Главная</a></li>
+            <li class="nav__item"><a class="nav__links" href="#advantages">ПРИЕМУЩЕСТВА</a></li>
+            <li class="nav__item"><a class="nav__links" href="#map-id">МЕСТОПОЛОЖЕНИЕ</a></li>
+            <li class="nav__item"><a class="nav__links" href="#plann-id">ПЛАНИРОВКИ</a></li>
+            <li class="nav__item"><a class="nav__links" href="#dev-id">ЗАСТРОЙЩИК</a></li>
+            <li class="nav__item"><a class="nav__links" href="#dev-id">КОНТАКТЫ</a></li>
           </ul>
           <!--end nav-->
         </div>
@@ -59,7 +64,7 @@
       </div>
       <!--end about-complex-->
       <!--begin advantages-->
-      <div class="advantages" style="background-image: url('img/adv-bg.jpg');">
+      <div class="advantages" style="background-image: url('img/adv-bg.jpg');" id="advantages">
         <!--begin container-->
         <div class="container">
           <h2 class="h2 h2--white advantages__h2">ПРЕИМУЩЕСТВА</h2>
@@ -147,7 +152,7 @@
       </div>
       <!--end advantages-->
       <!--begin planning-->
-      <div class="planning">
+      <div class="planning" id="plann-id">
         <!--begin container-->
         <div class="container">
           <h2 class="h2 planning__h2">ПЛАНИРОВКИ</h2>
@@ -336,7 +341,7 @@
       </div>
       <!--end planning-->
       <!--begin map-container-->
-      <div class="map-container">
+      <div class="map-container" id="map-id">
         <div class="map" id="map"> </div>
         <!--begin map__content-->
         <div class="map__content">
@@ -347,7 +352,7 @@
       </div>
       <!--end map-container-->
       <!--begin gallery-->
-      <div class="gallery">
+      <div class="gallery" id="gall-id">
         <div class="container">
           <h2 class="h2 gallery__h2">ГАЛЕРЕЯ</h2>
           <!--begin slider-wrapper-->
@@ -380,7 +385,7 @@
       </div>
       <!--end gallery-->
       <!--begin stock-block-->
-      <div class="stock-block">
+      <div class="stock-block" id="stock-id">
         <!--begin container-->
         <div class="container">
           <h2 class="h2 stock-block__h2 ">АКЦИЯ</h2>
@@ -791,7 +796,7 @@
       <div class="footer" style="background-image: url('img/footer.jpg');">
         <!--begin container-->
         <!--begin developer-->
-        <div class="developer">
+        <div class="developer" id="dev-id">
           <!--begin container-->
           <div class="container">
             <h2 class="h2 developer__h2">ЗАСТРОЙЩИК</h2>
@@ -809,7 +814,7 @@
             <div class="office">
               <a class="office__logo" href="#" style="background-image: url('img/footer-logo.png');"></a>
               <div class="office__info">
-                <h2 class="h2 office__h2">ОФИС ПРОДАЖ</h2>
+                <h2 class="h2 office__h2 h2--white">ОФИС ПРОДАЖ</h2>
                 <div class="info-block office__info-block">
                   <p class="info-block__caption"> Ждем Вас по адресу </p>
                   <p class="info-block__content"> ул. Петра Дегтяренко 22А Киев, 04205, Украина </p>
@@ -819,36 +824,44 @@
                   <p class="info-block__content"> Пн.–Пт. 9:00 – 19:00 <br> Сб., Вс. 10:00 – 16:00 </p>
                 </div>
               </div>
-              <div class="office__contacts"> <a class="office__phone" href="tel:+380440000000">+38 (044) 000 00 00</a> <a class="office__mail" href="mailto:loreipsum@gmail">e-mail: loreipsum@gmail</a>
+              <div class="office__contacts">
+                <div class="phone-mail-wrapper"> <a class="office__phone phone phone--small" href="tel:+380440000000">+38 (044) 000 00 00</a> <a class="office__mail mail" href="mailto:loreipsum@gmail">e-mail: loreipsum@gmail</a> </div>
                 <div class="socials">
-                  <a class="socials__link" href="#"></a>
-                  <a class="socials__link" href="#"></a>
-                  <a class="socials__link" href="#"></a>
+                  <a class="socials__link" href="#"> <svg class="icon icon-vk"><use xlink:href="img/sprite.svg#icon-vk"></use></svg> </a>
+                  <a class="socials__link" href="#"> <svg class="icon icon-fb"><use xlink:href="img/sprite.svg#icon-fb"></use></svg> </a>
+                  <a class="socials__link" href="#"> <svg class="icon icon-in"><use xlink:href="img/sprite.svg#icon-in"></use></svg> </a>
                 </div>
               </div>
             </div>
-            <div class="form-block"></div>
+            <div class="form-block">
+              <h2 class="h2 h2--white form-block__h2">У вас есть вопросы?</h2>
+              <!--begin form-wrapper-->
+              <div class="form-wrapper">
+                <form class="question"> <input class="question__input" type="text" name="name" placeholder="Ваше имя"> <input class="question__input" type="text" name="phone" placeholder="Ваш телефон"> <textarea class="question__textarea" placeholder="Ваш вопрос"></textarea>                  <button class="question__button" type="submit">Отправить</button> </form>
+              </div>
+              <!--end form-wrapper-->
+            </div>
           </div>
         </div>
         <!--end container-->
       </div>
-      <!--end footer--><a class="stock" href="#">
+      <!--end footer--><a class="stock-fixed stock-fixed-js" href="#stock-id">
 	Акция
 </a>
       <!--begin fixed-line-->
-      <div class="fixed-line in-not-fixed">
+      <div class="fixed-line is-not-fixed">
         <!--begin container-->
         <div class="container">
           <a class="fixed-line__logo" href="#"></a>
           <!--begin nav-->
           <ul class="nav">
-            <li class="nav__item"><a class="nav__links" href="#">Главная</a></li>
-            <li class="nav__item"><a class="nav__links" href="#">ПРИЕМУЩЕСТВА</a></li>
-            <li class="nav__item"><a class="nav__links" href="#">МЕСТОПОЛОЖЕНИЕ</a></li>
-            <li class="nav__item"><a class="nav__links" href="#">ПЛАНИРОВКИ</a></li>
-            <li class="nav__item"><a class="nav__links" href="#">галерея</a></li>
-            <li class="nav__item"><a class="nav__links" href="#">ЗАСТРОЙЩИК</a></li>
-            <li class="nav__item"><a class="nav__links" href="#">КОНТАКТЫ</a></li>
+            <li class="nav__item"><a class="nav__links" href="#main">Главная</a></li>
+            <li class="nav__item"><a class="nav__links" href="#advantages">ПРИЕМУЩЕСТВА</a></li>
+            <li class="nav__item"><a class="nav__links" href="#map-id">МЕСТОПОЛОЖЕНИЕ</a></li>
+            <li class="nav__item"><a class="nav__links" href="#plann-id">ПЛАНИРОВКИ</a></li>
+            <li class="nav__item"><a class="nav__links" href="#gall-id">галерея</a></li>
+            <li class="nav__item"><a class="nav__links" href="#dev-id">ЗАСТРОЙЩИК</a></li>
+            <li class="nav__item"><a class="nav__links" href="#dev-id">КОНТАКТЫ</a></li>
           </ul> <a class="phone fixed-line__phone" href="tel:80670000000">8 067 000 00 00</a>
           <!--end nav-->
         </div>

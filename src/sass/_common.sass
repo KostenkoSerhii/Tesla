@@ -2,6 +2,65 @@
 	box-sizing: border-box
 a
 	text-decoration: none
+.round1, .round1:before, .round1:after
+	border: 3px solid transparent
+	border-radius: 50%
+.round1
+	width: 150px
+	height: 150px
+	border-top-color: #42598a
+	animation: spin 1s infinite linear
+	position: absolute
+	top: 50%
+	left: 50%
+	margin-left: -75px
+	margin-top: -75px
+	z-index: 1001
+	&:before, &:after
+		content: ''
+		position: absolute
+	&:before
+		top: 10px
+		left: 10px
+		right: 10px
+		bottom: 10px
+		border-top-color: $yellow
+		animation: spin 2s infinite linear
+	&:after
+		top: 23px
+		left: 23px
+		right: 23px
+		bottom: 23px
+		border-top-color: #4aa153
+		animation: spin 3s infinite linear
+@keyframes spin 
+	from 
+		transform: rotate(0deg)
+	to 
+		transform: rotate(360deg)
+.preload-block
+	position: fixed
+	width: 100%
+	height: 100%
+.preload-block__left, .preload-block__right
+	position: absolute
+	background: #222
+	width: 51%
+	height: 100%
+	z-index: 1000
+	transition: all .7s
+ .preload-block__left
+ 	left: 0
+.preload-block__right
+	right: 0
+.loaded
+	.round1
+		display: none
+	.preload-block__left
+		transform: translateX(-100%)
+	.preload-block__right
+		transform: translateX(100%)
+
 .h2
 	font: 300 30px/1em "Din Light", sans-serif
 	color: $main-text-color
@@ -16,6 +75,16 @@ a
 	font: 700 36px/0.8em $DB
 	+r(767)
 		font-size: 18px
+.phone--small
+	font-size: 30px
+.mail
+	color:  $yellow
+	font: 300 24px/1em "Din Light", sans-serif
+	+r(767)
+		font-size: 16px
+.is-night-js
+	.mail
+		color: $orange-darken
 .article
 	color: $main-text-color
 	font: $main-text-font
