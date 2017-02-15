@@ -974,15 +974,17 @@ a {
   position: fixed;
   width: 100%;
   height: 100%;
+  z-index: 1000;
 }
 
 .preload-block__left, .preload-block__right {
   position: absolute;
   background: #222;
+  opacity: 1;
   width: 51%;
   height: 100%;
-  z-index: 1000;
   transition: all .3s;
+  z-index: 1000;
 }
 
 .preload-block__left .preload-block__left, .preload-block__right .preload-block__left {

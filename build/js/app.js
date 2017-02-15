@@ -3721,6 +3721,8 @@ $(document).ready(function () {
 			});
 		}
 	});
-
-	$("body").addClass("loaded");
+	setTimeout(function () {
+		$("body").addClass("loaded");
+		$(".preload-block").css("display", "none");
+	}, 0);
 });
