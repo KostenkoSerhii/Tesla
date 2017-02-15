@@ -10,7 +10,6 @@
 sayHello();
 $(document).ready(function(){
 //=include components/scrollto.js
-$("body").addClass("loaded");
 
 /*fixed-line*/
 var	firstScreenHeight = $(".first-screen-js").height();
@@ -263,8 +262,7 @@ var	firstScreenHeight = $(".first-screen-js").height();
 				});
 			}
 		});
-	setTimeOut(function(){
-		$("body").addClass("loaded");
-	}, 0);
-	
+
+
+	$("body").addClass("loaded");
 });

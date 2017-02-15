@@ -982,7 +982,7 @@ a {
   width: 51%;
   height: 100%;
   z-index: 1000;
-  transition: all .7s;
+  transition: all .3s;
 }
 
 .preload-block__left .preload-block__left, .preload-block__right .preload-block__left {

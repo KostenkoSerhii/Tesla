@@ -3491,8 +3491,6 @@ $(document).ready(function () {
 	scrollToElement(".stock-fixed-js");
 	scrollToElement(".nav__links");
 
-	$("body").addClass("loaded");
-
 	/*fixed-line*/
 	var firstScreenHeight = $(".first-screen-js").height();
 	//alert(firstScreenHeight);
@@ -3723,7 +3721,6 @@ $(document).ready(function () {
 			});
 		}
 	});
-	setTimeOut(function () {
-		$("body").addClass("loaded");
-	}, 0);
+
+	$("body").addClass("loaded");
 });
