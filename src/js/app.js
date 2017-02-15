@@ -79,7 +79,7 @@ var	firstScreenHeight = $(".first-screen-js").height();
 			console.log(curSlide);
 		});*/
 
-		$(".gallery .slider__img-block").on("click", function(){
+		$(".slider__img-block").on("click", function(){
 			$("body").addClass('is-hidden-js');
 			$(".gall-popup-wrapper-js").addClass("popup-wrapper-is-open");
 			$(".gall-popup-slider-js").slick({
@@ -90,7 +90,6 @@ var	firstScreenHeight = $(".first-screen-js").height();
 			//asNavFor: '.gall-slider-js'
 		});
 		});
-
 		$(".gall-popup-wrapper-js .popup-close").on("click", function(){
 			$("body").removeClass('is-hidden-js');
 			$(".gall-popup-wrapper-js").removeClass("popup-wrapper-is-open");
@@ -148,7 +147,6 @@ var	firstScreenHeight = $(".first-screen-js").height();
 				});
 			}
 		});
-
 	function addSlider(container, slider, option) {
 		container.find(slider).each(function() {
 			var _this = $(this);
@@ -156,8 +154,6 @@ var	firstScreenHeight = $(".first-screen-js").height();
 			_this.slick(option);
 		});
 	};
-
-
 	$(".planning .slide-js").on('click', function(e){
 		e.preventDefault();
 		$("body").addClass('is-hidden-js');
@@ -214,8 +210,6 @@ var	firstScreenHeight = $(".first-screen-js").height();
 		]
 	});
 	$("#date-tabs").tabs({
-			//show: { effect: "fadeIn", duration: 300 },
-			//hide: { effect: "fadeOut", duration: 300 },
 			activate: function(event, ui) {
 				addSlider(ui.newPanel, '.construction-slider-js', {
 					infinite: true,
@@ -262,9 +256,9 @@ var	firstScreenHeight = $(".first-screen-js").height();
 				});
 			}
 		});
-	setTimeout(function(){
-		$("body").addClass("loaded");	
-		$(".preload-block").css("display", "none");
-	}, 1000);
+	//setTimeout(function(){
+	//	$("body").addClass("loaded");	
+	//	$(".preload-block").css("display", "none");
+	//}, 1000);
 
 });
