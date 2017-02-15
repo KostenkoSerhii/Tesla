@@ -3724,5 +3724,5 @@ $(document).ready(function () {
 	setTimeout(function () {
 		$("body").addClass("loaded");
 		$(".preload-block").css("display", "none");
-	}, 0);
+	}, 1000);
 });

@@ -265,6 +265,6 @@ var	firstScreenHeight = $(".first-screen-js").height();
 	setTimeout(function(){
 		$("body").addClass("loaded");	
 		$(".preload-block").css("display", "none");
-	}, 0);
+	}, 1000);
 
 });
