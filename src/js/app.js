@@ -175,6 +175,13 @@ var	firstScreenHeight = $(".first-screen-js").height();
 		$(".planning-popup").removeClass("planning-popup-is-open");
 		$("body").removeClass('is-hidden-js');
 	});
+	$(".fixed-line .nav__links").on("click", function(){
+		if($(".planning-popup").hasClass("planning-popup-is-open")){
+			$(".planning-popup").removeClass("planning-popup-is-open");
+			$("body").removeClass('is-hidden-js');
+		};
+
+	});
 	/*galleries popup*/
 	$(".gall-slider-js").slick({
 		infinite: true,
