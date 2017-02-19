@@ -2,20 +2,22 @@
 	+hidetext
 .first-screen
 	padding-top: 48px
-	+image("fs-bg-day.jpg")
-	height: 100vh
-	//height: 948px
+	//+image("fs-bg-day.jpg")
+	+cover
+	min-height: 948px
+	height: 100%
+	+rhmin(800)
+		height: 100vh
 	+r(1200)
 		min-height: 800px
-		height: 100%
 	+r(991)
 		min-height: 650px
 	+r(767)
 		min-height: 300px
 	+cover
-.is-night-js
-	.first-screen
-		+image("fs-bg-night.jpg")
+//.is-night-js
+//	.first-screen
+//		+image("fs-bg-night.jpg")
 .switch
 	text-align: center
 	+r(767)

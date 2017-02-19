@@ -3506,13 +3506,19 @@ $(document).ready(function () {
 	/*fixed-line*/
 
 	/*switch*/
+	var tampDayBg = $(".first-screen-js").attr("data-day-background");
+	var tampNightBg = $(".first-screen-js").attr("data-night-background");
+	//console.log(tampDayBg);
+	//console.log(tampNightBg);
 	$(".switch__month").on("click", function (e) {
 		e.preventDefault();
 		$("body").removeClass("is-day-js").addClass("is-night-js");
+		$(".first-screen-js").css("backgroundImage", "url(" + tampNightBg + ")");
 	});
 	$(".switch__sun").on("click", function (e) {
 		e.preventDefault();
 		$("body").removeClass("is-night-js").addClass("is-day-js");
+		$(".first-screen-js").css("backgroundImage", "url(" + tampDayBg + ")");
 	});
 	// switcher day/night for time
 	var time = new Date().getHours();

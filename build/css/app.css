@@ -1042,15 +1042,14 @@ sup {
 
 .first-screen {
   padding-top: 48px;
-  background-image: url("../img/fs-bg-day.jpg");
-  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-}
-
-.is-night-js .first-screen {
-  background-image: url("../img/fs-bg-night.jpg");
+  min-height: 948px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 .switch {
@@ -2565,6 +2564,12 @@ sup {
   }
 }
 
+@media only screen and (min-height: 800px){
+  .first-screen{
+    height: 100vh;
+  }
+}
+
 @media only screen and (max-width: 1200px){
   .article__img{
     width: 300px;
@@ -2575,7 +2580,6 @@ sup {
   }
   .first-screen{
     min-height: 800px;
-    height: 100%;
   }
   .adv-tabs__nav-item{
     margin-right: 10px;
