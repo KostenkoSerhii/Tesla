@@ -271,9 +271,17 @@ var	firstScreenHeight = $(".first-screen-js").height();
 			});
 		}
 	});
-	//setTimeout(function(){
-	//	$("body").addClass("loaded");	
-	//	$(".preload-block").css("display", "none");
-	//}, 1000);
 
+
+
+});
+$(window).on("load", function (){
+	
+	$(".spinner").fadeOut(300);
+	$(".preload-block__left").css("transform", "translateX(-100%)");
+	$(".preload-block__right").css("transform", "translateX(100%)");
+	
+	setTimeout(function(){
+		$(".preload-block").css("display", "none");
+	}, 500);
 });
