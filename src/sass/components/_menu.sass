@@ -14,8 +14,13 @@
 	+r(767)
 		display: none
 		position: fixed
-		right: 15px
-		top: 35px
+		left: 0
+		width: 100%
+		top: 0
+		z-index: 21
+		margin-top: 0
+		text-align: center
+		padding: 10px 0
 		&:before
 			opacity: 1
 .nav__links
@@ -32,6 +37,8 @@
 			background-color: #e3ac2c
 			background-image: linear-gradient(165deg, #e8c14d  12%,  #e3ac2c 100%)
 			padding: 16px 0
+	+r(767)
+		display: inline-block
 .is-night-js
 	.first-screen__nav-links
 		color: $white

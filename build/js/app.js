@@ -3524,8 +3524,10 @@ $(document).ready(function () {
 	var time = new Date().getHours();
 	if (time >= 6 && time < 21) {
 		$('body').addClass('is-day-js');
+		$(".first-screen-js").css("backgroundImage", "url(" + tampDayBg + ")");
 	} else {
 		$('body').addClass('is-night-js');
+		$(".first-screen-js").css("backgroundImage", "url(" + tampNightBg + ")");
 	}
 	/*switch*/
 
@@ -3550,7 +3552,14 @@ $(document).ready(function () {
 		/*tabs*/
 		$("#adv-tabs").tabs({});
 		/*tabs*/
-	} else if (windowWidth < 768) {} else {
+	} else if (windowWidth < 768) {
+
+		$(".first-screen__nav-links").on("click", function (e) {
+			e.preventDefault();
+			$(".menu-btn").trigger("click");
+			$(".first-screen__nav").slideUp();
+		});
+	} else {
 
 		$("#adv-tabs").tabs({
 			event: "mouseover"

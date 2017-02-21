@@ -1443,6 +1443,7 @@ sup {
 .is-night-js .adv-tabs__content {
   background-color: #ab5c4e;
   background-image: linear-gradient(165deg, rgba(205, 199, 42, 0.5) 0%, #ab5c4e 100%);
+  color: #fff;
 }
 
 .planning {
@@ -1621,7 +1622,7 @@ sup {
   margin-right: 13px;
 }
 
-.is-night-js .google-doc-block {
+.is-night-js .doc-block {
   color: #2e487e;
 }
 
@@ -2266,11 +2267,19 @@ sup {
   text-transform: uppercase;
   color: white;
   display: inline-block;
-  background-color: #00805f;
-  background-image: linear-gradient(165deg, #2b9757 0%, #00805f 100%);
   width: 270px;
   height: 65px;
   vertical-align: top;
+}
+
+.is-day-js .download-pdf {
+  background-color: #00805f;
+  background-image: linear-gradient(165deg, #2b9757 0%, #00805f 100%);
+}
+
+.is-night-js .download-pdf {
+  background-color: #2e487e;
+  background-image: linear-gradient(165deg, #4d537c 0%, #2e487e 100%);
 }
 
 .doc-block--popup {
@@ -2764,6 +2773,7 @@ sup {
     width: 150px;
     height: 250px;
     background-size: contain;
+    margin-left: 6px;
   }
   .first-screen__nav{
     width: 170px;
@@ -2905,15 +2915,24 @@ sup {
     width: 100px;
     height: 180px;
     top: -40px;
+    margin-left: 0;
   }
   .first-screen__nav{
     display: none;
     position: fixed;
-    right: 15px;
-    top: 35px;
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 21;
+    margin-top: 0;
+    text-align: center;
+    padding: 10px 0;
   }
   .first-screen__nav:before{
     opacity: 1;
+  }
+  .first-screen__nav-links{
+    display: inline-block;
   }
   .is-night-js .first-screen__nav-links{
     color: #2e2e2e;
