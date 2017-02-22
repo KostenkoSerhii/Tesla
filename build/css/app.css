@@ -2526,6 +2526,12 @@ sup {
   }
 }
 
+@media only screen and (min-width: 1100px){
+  .slick-center .slider__img-block{
+    box-shadow: 50px 0 80px #fff, -50px 0 80px #fff;
+  }
+}
+
 @media only screen and (min-width: 1200px){
   .container, .container-large, .container-medium{
     width: 1030px;
