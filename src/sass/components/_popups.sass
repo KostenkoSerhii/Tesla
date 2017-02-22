@@ -172,15 +172,24 @@
 		&:before
 			+vcenter
 		+r(767)
-			width: 50px
-			height: 50px
 			background: none
 	.slick-prev
-		left: 42%
-		+r(1350)
-			left: 35%
-	.slick-next
-		right: 42%
-		+r(1350)
-		right: 35%
+		left: calc(50% - 129px)
 
+		&:before
+			+arr(37, 42, #33997f, l)
+
+	.slick-next
+		right: calc(50% - 129px)
+
+		&:before
+			+arr(37, 42, #33997f, r)
+
+.is-night-js
+	.popup-slider
+		.slick-prev
+			&:before
+				+arr(37, 42, #586d98, l)
+		.slick-next
+			&:before
+				+arr(37, 42, #586d98, r)
